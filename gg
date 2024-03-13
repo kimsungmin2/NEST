@@ -1,0 +1,999 @@
+isAuthenticated: [Function (anonymous)],
+isUnauthenticated: [Function (anonymous)],
+_sessionManager: SessionManager {
+\_key: 'passport',
+\_serializeUser: [Function: bound ]
+},
+\_passport: {
+instance: Authenticator {
+\_key: 'passport',
+\_strategies: [Object],
+\_serializers: [],
+\_deserializers: [],
+\_infoTransformers: [],
+\_framework: [Object],
+\_sm: [SessionManager],
+Authenticator: [Function: Authenticator],
+Passport: [Function: Authenticator],
+Strategy: [Function],
+strategies: [Object],
+\_userProperty: 'user'
+}
+},
+body: {},
+route: Route {
+path: '/oauth/callback',
+stack: [ [Layer] ],
+methods: { get: true }
+},
+authInfo: undefined,
+user: {
+accessToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRW1haWwiOnsiaWQiOjE1fSwiaWF0IjoxNzEwMTQ5NDE2LCJleHAiOjE3MTAxOTI2MTZ9.0DtWjlbRSOb6o5Rca3RlY6SMD8SUgCHi6gCj94bAiGE',
+refreshToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRW1haWwiOnsiaWQiOjE1fSwiaWF0IjoxNzEwMTQ5NDE2LCJleHAiOjE3MTA3NTQyMTZ9.seVu2PE8xMdhVft1yL5lRQVf8S3hXEZ2ggF_-hUA2Ss'
+},
+[Symbol(shapeMode)]: true,
+[Symbol(kCapture)]: false,
+[Symbol(kHeaders)]: {
+host: 'localhost:3095',
+connection: 'keep-alive',
+'upgrade-insecure-requests': '1',
+'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,_/_;q=0.8,application/signed-exchange;v=b3;q=0.7',
+'sec-fetch-site': 'none',
+'sec-fetch-mode': 'navigate',
+'sec-fetch-user': '?1',
+'sec-fetch-dest': 'document',
+'sec-ch-ua': '"Chromium";v="122", "Not(A:Brand";v="24", "Google Chrome";v="122"',
+'sec-ch-ua-mobile': '?0',
+'sec-ch-ua-platform': '"macOS"',
+'accept-encoding': 'gzip, deflate, br, zstd',
+'accept-language': 'ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7',
+cookie: 'authorization=Bearer%20eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRW1haWwiOnsiaWQiOjE0fSwiaWF0IjoxNzEwMTQ4NTkwLCJleHAiOjE3MTAxOTE3OTB9.i1dvpMQyjLR2r8T-aa2J-cTHAgm3N75hC3xP-UwvAHI; refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRW1haWwiOnsiaWQiOjE0fSwiaWF0IjoxNzEwMTQ4NTkwLCJleHAiOjE3MTA3NTMzOTB9.uhyEg7qURGWIq5CAGkIomitaM6C0xlaHQe4qBDkH-7Q'
+},
+[Symbol(kHeadersCount)]: 30,
+[Symbol(kTrailers)]: null,
+[Symbol(kTrailersCount)]: 0
+}
+^C
+kimsungmin@gimseongmin-ui-MacBookAir lol_fan_community %
+kimsungmin@gimseongmin-ui-MacBookAir lol_fan_community %
+kimsungmin@gimseongmin-ui-MacBookAir lol_fan_community % npm run start
+
+> lol_fan_community@0.0.1 start
+> nest start
+
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [NestFactory] Starting Nest application...
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [InstanceLoader] AppModule dependencies initialized +9ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [InstanceLoader] TypeOrmModule dependencies initialized +0ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [InstanceLoader] SeatModule dependencies initialized +0ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [InstanceLoader] MulterModule dependencies initialized +0ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [InstanceLoader] ConfigHostModule dependencies initialized +0ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [InstanceLoader] PointModule dependencies initialized +0ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [InstanceLoader] CommonModule dependencies initialized +0ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [InstanceLoader] ConfigModule dependencies initialized +0ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [InstanceLoader] AwsModule dependencies initialized +42ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [InstanceLoader] JwtModule dependencies initialized +0ms
+query: SELECT VERSION() AS `version`
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [InstanceLoader] TypeOrmCoreModule dependencies initialized +98ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [InstanceLoader] TypeOrmModule dependencies initialized +0ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [InstanceLoader] TypeOrmModule dependencies initialized +0ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [InstanceLoader] TypeOrmModule dependencies initialized +0ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [InstanceLoader] TypeOrmModule dependencies initialized +0ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [InstanceLoader] TypeOrmModule dependencies initialized +0ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [InstanceLoader] TypeOrmModule dependencies initialized +0ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [InstanceLoader] MusicModule dependencies initialized +1ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [InstanceLoader] TicketModule dependencies initialized +0ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [InstanceLoader] ConcertModule dependencies initialized +1ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [InstanceLoader] UserModule dependencies initialized +0ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [InstanceLoader] AuthModule dependencies initialized +0ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [RoutesResolver] AuthController {/oauth}: +15ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [RouterExplorer] Mapped {/oauth, GET} route +2ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [RouterExplorer] Mapped {/oauth/callback, GET} route +0ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [RoutesResolver] UserController {/user}: +0ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [RouterExplorer] Mapped {/user/sign-up, POST} route +0ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [RouterExplorer] Mapped {/user/singer/sign-up, POST} route +0ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [RouterExplorer] Mapped {/user/admin/sign-up, POST} route +0ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [RouterExplorer] Mapped {/user/login, POST} route +0ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [RouterExplorer] Mapped {/user, GET} route +1ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [RouterExplorer] Mapped {/user/logout, POST} route +0ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [RouterExplorer] Mapped {/user/point, GET} route +0ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [RoutesResolver] MusicController {/music}: +0ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [RouterExplorer] Mapped {/music, POST} route +0ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [RoutesResolver] ConcertController {/concert}: +0ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [RouterExplorer] Mapped {/concert, POST} route +0ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [RouterExplorer] Mapped {/concert/search, GET} route +0ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [RouterExplorer] Mapped {/concert, GET} route +0ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [RouterExplorer] Mapped {/concert/:concertId/seat, GET} route +1ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [RouterExplorer] Mapped {/concert/:concertId, GET} route +0ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [RoutesResolver] PointController {/point}: +0ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [RoutesResolver] TicketController {/ticket}: +0ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [RouterExplorer] Mapped {/ticket, POST} route +0ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [RouterExplorer] Mapped {/ticket, GET} route +0ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [RouterExplorer] Mapped {/ticket/:ticketcancel, PATCH} route +0ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [RoutesResolver] CommonController {/common}: +0ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [RouterExplorer] Mapped {/common, POST} route +0ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [RouterExplorer] Mapped {/common, GET} route +0ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [RouterExplorer] Mapped {/common/:id, GET} route +0ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [RouterExplorer] Mapped {/common/:id, PATCH} route +0ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [RouterExplorer] Mapped {/common/:id, DELETE} route +0ms
+[Nest] 67114 - 2024. 03. 11. 오후 6:35:03 LOG [NestApplication] Nest application successfully started +2ms
+listening on port 3095
+query: SELECT `User`.`id` AS `User_id` FROM `users` `User` WHERE ( ((`User`.`email` = ?)) ) AND ( `User`.`deleted_at` IS NULL ) LIMIT 1 -- PARAMETERS: ["anrl7811@gmail.com"]
+query: SELECT `User`.`id` AS `User_id` FROM `users` `User` WHERE ( ((`User`.`email` = ?)) ) AND ( `User`.`deleted_at` IS NULL ) LIMIT 1 -- PARAMETERS: ["anrl7811@gmail.com"]
+^C
+kimsungmin@gimseongmin-ui-MacBookAir lol_fan_community % sudo npm i passport-naver
+Password:
+
+added 4 packages, and audited 1193 packages in 3s
+
+131 packages are looking for funding
+run `npm fund` for details
+
+2 moderate severity vulnerabilities
+
+Some issues need review, and may require choosing
+a different dependency.
+
+Run `npm audit` for details.
+kimsungmin@gimseongmin-ui-MacBookAir lol_fan_community %
+kimsungmin@gimseongmin-ui-MacBookAir lol_fan_community %  
+kimsungmin@gimseongmin-ui-MacBookAir lol_fan_community % sudo npm i passport-naver
+Password:
+sudo: a password is required
+kimsungmin@gimseongmin-ui-MacBookAir lol_fan_community % npm run start
+
+> lol_fan_community@0.0.1 start
+> nest start
+
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:57 LOG [NestFactory] Starting Nest application...
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:57 LOG [InstanceLoader] AppModule dependencies initialized +12ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:57 LOG [InstanceLoader] TypeOrmModule dependencies initialized +0ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:57 LOG [InstanceLoader] SeatModule dependencies initialized +0ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:57 LOG [InstanceLoader] MulterModule dependencies initialized +0ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:57 LOG [InstanceLoader] ConfigHostModule dependencies initialized +0ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:57 LOG [InstanceLoader] PointModule dependencies initialized +0ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:57 LOG [InstanceLoader] CommonModule dependencies initialized +0ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:57 LOG [InstanceLoader] ConfigModule dependencies initialized +0ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [InstanceLoader] AwsModule dependencies initialized +41ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [InstanceLoader] JwtModule dependencies initialized +0ms
+query: SELECT VERSION() AS `version`
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [InstanceLoader] TypeOrmCoreModule dependencies initialized +511ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [InstanceLoader] TypeOrmModule dependencies initialized +0ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [InstanceLoader] TypeOrmModule dependencies initialized +1ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [InstanceLoader] TypeOrmModule dependencies initialized +0ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [InstanceLoader] TypeOrmModule dependencies initialized +0ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [InstanceLoader] TypeOrmModule dependencies initialized +0ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [InstanceLoader] TypeOrmModule dependencies initialized +0ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [InstanceLoader] MusicModule dependencies initialized +3ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [InstanceLoader] TicketModule dependencies initialized +0ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [InstanceLoader] ConcertModule dependencies initialized +0ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [InstanceLoader] UserModule dependencies initialized +0ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [InstanceLoader] AuthModule dependencies initialized +0ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [RoutesResolver] AuthController {/oauth}: +28ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [RouterExplorer] Mapped {/oauth, GET} route +2ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [RouterExplorer] Mapped {/oauth/callback, GET} route +0ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [RouterExplorer] Mapped {/oauth/naver, GET} route +1ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [RoutesResolver] UserController {/user}: +0ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [RouterExplorer] Mapped {/user/sign-up, POST} route +0ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [RouterExplorer] Mapped {/user/singer/sign-up, POST} route +0ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [RouterExplorer] Mapped {/user/admin/sign-up, POST} route +0ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [RouterExplorer] Mapped {/user/login, POST} route +0ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [RouterExplorer] Mapped {/user, GET} route +1ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [RouterExplorer] Mapped {/user/logout, POST} route +0ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [RouterExplorer] Mapped {/user/point, GET} route +0ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [RoutesResolver] MusicController {/music}: +0ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [RouterExplorer] Mapped {/music, POST} route +1ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [RoutesResolver] ConcertController {/concert}: +0ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [RouterExplorer] Mapped {/concert, POST} route +0ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [RouterExplorer] Mapped {/concert/search, GET} route +0ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [RouterExplorer] Mapped {/concert, GET} route +0ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [RouterExplorer] Mapped {/concert/:concertId/seat, GET} route +0ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [RouterExplorer] Mapped {/concert/:concertId, GET} route +0ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [RoutesResolver] PointController {/point}: +0ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [RoutesResolver] TicketController {/ticket}: +1ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [RouterExplorer] Mapped {/ticket, POST} route +0ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [RouterExplorer] Mapped {/ticket, GET} route +0ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [RouterExplorer] Mapped {/ticket/:ticketcancel, PATCH} route +0ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [RoutesResolver] CommonController {/common}: +0ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [RouterExplorer] Mapped {/common, POST} route +0ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [RouterExplorer] Mapped {/common, GET} route +0ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [RouterExplorer] Mapped {/common/:id, GET} route +0ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [RouterExplorer] Mapped {/common/:id, PATCH} route +0ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [RouterExplorer] Mapped {/common/:id, DELETE} route +0ms
+[Nest] 82204 - 2024. 03. 11. 오후 11:10:58 LOG [NestApplication] Nest application successfully started +5ms
+listening on port 3095
+query: SELECT `User`.`id` AS `User_id` FROM `users` `User` WHERE ( ((`User`.`email` = ?)) ) AND ( `User`.`deleted_at` IS NULL ) LIMIT 1 -- PARAMETERS: ["anrl7811@gmail.com"]
+query: SELECT `User`.`id` AS `User_id` FROM `users` `User` WHERE ( ((`User`.`email` = ?)) ) AND ( `User`.`deleted_at` IS NULL ) LIMIT 1 -- PARAMETERS: ["anrl7811@gmail.com"]
+<ref *2> IncomingMessage {
+\_events: {
+close: undefined,
+error: undefined,
+data: undefined,
+end: undefined,
+readable: undefined
+},
+\_readableState: ReadableState {
+highWaterMark: 16384,
+buffer: [],
+bufferIndex: 0,
+length: 0,
+pipes: [],
+awaitDrainWriters: null,
+[Symbol(kState)]: 1315596
+},
+\_maxListeners: undefined,
+socket: <ref *1> Socket {
+connecting: false,
+\_hadError: false,
+\_parent: null,
+\_host: null,
+\_closeAfterHandlingError: false,
+\_events: {
+close: [Array],
+error: [Function: socketOnError],
+prefinish: undefined,
+finish: undefined,
+drain: [Function: bound socketOnDrain],
+data: [Function: bound socketOnData],
+end: [Array],
+readable: undefined,
+timeout: [Function: socketOnTimeout],
+resume: [Function: onSocketResume],
+pause: [Function: onSocketPause]
+},
+\_readableState: ReadableState {
+highWaterMark: 16384,
+buffer: [],
+bufferIndex: 0,
+length: 0,
+pipes: [],
+awaitDrainWriters: null,
+[Symbol(kState)]: 193997060
+},
+\_writableState: WritableState {
+highWaterMark: 16384,
+length: 0,
+corked: 0,
+onwrite: [Function: bound onwrite],
+writelen: 0,
+bufferedIndex: 0,
+pendingcb: 0,
+[Symbol(kState)]: 17563908,
+[Symbol(kBufferedValue)]: null,
+[Symbol(kWriteCbValue)]: [Function: bound onFinish],
+[Symbol(kAfterWriteTickInfoValue)]: null
+},
+allowHalfOpen: true,
+\_maxListeners: undefined,
+\_eventsCount: 8,
+\_sockname: null,
+\_pendingData: null,
+\_pendingEncoding: '',
+server: Server {
+maxHeaderSize: undefined,
+insecureHTTPParser: undefined,
+requestTimeout: 300000,
+headersTimeout: 60000,
+keepAliveTimeout: 5000,
+connectionsCheckingInterval: 30000,
+requireHostHeader: true,
+joinDuplicateHeaders: undefined,
+rejectNonStandardBodyWrites: false,
+\_events: [Object: null prototype],
+\_eventsCount: 3,
+\_maxListeners: undefined,
+\_connections: 2,
+\_handle: [TCP],
+\_usingWorkers: false,
+\_workers: [],
+\_unref: false,
+allowHalfOpen: true,
+pauseOnConnect: false,
+noDelay: true,
+keepAlive: false,
+keepAliveInitialDelay: 0,
+highWaterMark: 16384,
+httpAllowHalfOpen: false,
+timeout: 0,
+maxHeadersCount: null,
+maxRequestsPerSocket: 0,
+\_connectionKey: '6::::3095',
+[Symbol(IncomingMessage)]: [Function: IncomingMessage],
+[Symbol(ServerResponse)]: [Function: ServerResponse],
+[Symbol(shapeMode)]: false,
+[Symbol(kCapture)]: false,
+[Symbol(async_id_symbol)]: 23,
+[Symbol(kUniqueHeaders)]: null,
+[Symbol(http.server.connections)]: ConnectionsList {},
+[Symbol(http.server.connectionsCheckingInterval)]: Timeout {
+\_idleTimeout: 30000,
+\_idlePrev: [TimersList],
+\_idleNext: [TimersList],
+\_idleStart: 1426,
+\_onTimeout: [Function: bound checkConnections],
+\_timerArgs: undefined,
+\_repeat: 30000,
+\_destroyed: false,
+[Symbol(refed)]: false,
+[Symbol(kHasPrimitive)]: false,
+[Symbol(asyncId)]: 25,
+[Symbol(triggerId)]: 24
+}
+},
+\_server: Server {
+maxHeaderSize: undefined,
+insecureHTTPParser: undefined,
+requestTimeout: 300000,
+headersTimeout: 60000,
+keepAliveTimeout: 5000,
+connectionsCheckingInterval: 30000,
+requireHostHeader: true,
+joinDuplicateHeaders: undefined,
+rejectNonStandardBodyWrites: false,
+\_events: [Object: null prototype],
+\_eventsCount: 3,
+\_maxListeners: undefined,
+\_connections: 2,
+\_handle: [TCP],
+\_usingWorkers: false,
+\_workers: [],
+\_unref: false,
+allowHalfOpen: true,
+pauseOnConnect: false,
+noDelay: true,
+keepAlive: false,
+keepAliveInitialDelay: 0,
+highWaterMark: 16384,
+httpAllowHalfOpen: false,
+timeout: 0,
+maxHeadersCount: null,
+maxRequestsPerSocket: 0,
+\_connectionKey: '6::::3095',
+[Symbol(IncomingMessage)]: [Function: IncomingMessage],
+[Symbol(ServerResponse)]: [Function: ServerResponse],
+[Symbol(shapeMode)]: false,
+[Symbol(kCapture)]: false,
+[Symbol(async_id_symbol)]: 23,
+[Symbol(kUniqueHeaders)]: null,
+[Symbol(http.server.connections)]: ConnectionsList {},
+[Symbol(http.server.connectionsCheckingInterval)]: Timeout {
+\_idleTimeout: 30000,
+\_idlePrev: [TimersList],
+\_idleNext: [TimersList],
+\_idleStart: 1426,
+\_onTimeout: [Function: bound checkConnections],
+\_timerArgs: undefined,
+\_repeat: 30000,
+\_destroyed: false,
+[Symbol(refed)]: false,
+[Symbol(kHasPrimitive)]: false,
+[Symbol(asyncId)]: 25,
+[Symbol(triggerId)]: 24
+}
+},
+parser: HTTPParser {
+'0': null,
+'1': [Function: parserOnHeaders],
+'2': [Function: parserOnHeadersComplete],
+'3': [Function: parserOnBody],
+'4': [Function: parserOnMessageComplete],
+'5': [Function: bound onParserExecute],
+'6': [Function: bound onParserTimeout],
+\_headers: [],
+\_url: '',
+socket: [Circular *1],
+incoming: [Circular *2],
+outgoing: null,
+maxHeaderPairs: 2000,
+\_consumed: true,
+onIncoming: [Function: bound parserOnIncoming],
+joinDuplicateHeaders: null,
+[Symbol(resource_symbol)]: [HTTPServerAsyncResource]
+},
+on: [Function: socketListenerWrap],
+addListener: [Function: socketListenerWrap],
+prependListener: [Function: socketListenerWrap],
+setEncoding: [Function: socketSetEncoding],
+\_paused: false,
+\_httpMessage: ServerResponse {
+\_events: [Object: null prototype],
+\_eventsCount: 1,
+\_maxListeners: undefined,
+outputData: [],
+outputSize: 0,
+writable: true,
+destroyed: false,
+\_last: false,
+chunkedEncoding: false,
+shouldKeepAlive: true,
+maxRequestsOnConnectionReached: false,
+\_defaultKeepAlive: true,
+useChunkedEncodingByDefault: true,
+sendDate: true,
+\_removedConnection: false,
+\_removedContLen: false,
+\_removedTE: false,
+strictContentLength: false,
+\_contentLength: null,
+\_hasBody: true,
+\_trailer: '',
+finished: false,
+\_headerSent: false,
+\_closed: false,
+socket: [Circular *1],
+\_header: null,
+\_keepAliveTimeout: 5000,
+\_onPendingData: [Function: bound updateOutgoingData],
+req: [Circular *2],
+\_sent100: false,
+\_expect_continue: false,
+\_maxRequestsPerSocket: 0,
+locals: [Object: null prototype] {},
+writeHead: [Function: writeHead],
+end: [Function: end],
+statusCode: 200,
+[Symbol(shapeMode)]: false,
+[Symbol(kCapture)]: false,
+[Symbol(kBytesWritten)]: 0,
+[Symbol(kNeedDrain)]: false,
+[Symbol(corked)]: 0,
+[Symbol(kOutHeaders)]: [Object: null prototype],
+[Symbol(errored)]: null,
+[Symbol(kHighWaterMark)]: 16384,
+[Symbol(kRejectNonStandardBodyWrites)]: false,
+[Symbol(kUniqueHeaders)]: null
+},
+timeout: 0,
+[Symbol(async_id_symbol)]: 27,
+[Symbol(kHandle)]: TCP {
+reading: true,
+onconnection: null,
+\_consumed: true,
+[Symbol(owner_symbol)]: [Circular *1]
+},
+[Symbol(lastWriteQueueSize)]: 0,
+[Symbol(timeout)]: Timeout {
+\_idleTimeout: -1,
+\_idlePrev: null,
+\_idleNext: null,
+\_idleStart: 3678,
+\_onTimeout: null,
+\_timerArgs: undefined,
+\_repeat: null,
+\_destroyed: true,
+[Symbol(refed)]: false,
+[Symbol(kHasPrimitive)]: false,
+[Symbol(asyncId)]: 51,
+[Symbol(triggerId)]: 48
+},
+[Symbol(kBuffer)]: null,
+[Symbol(kBufferCb)]: null,
+[Symbol(kBufferGen)]: null,
+[Symbol(shapeMode)]: true,
+[Symbol(kCapture)]: false,
+[Symbol(kSetNoDelay)]: true,
+[Symbol(kSetKeepAlive)]: false,
+[Symbol(kSetKeepAliveInitialDelay)]: 0,
+[Symbol(kBytesRead)]: 0,
+[Symbol(kBytesWritten)]: 0
+},
+httpVersionMajor: 1,
+httpVersionMinor: 1,
+httpVersion: '1.1',
+complete: true,
+rawHeaders: [
+'Host',
+'localhost:3095',
+'Connection',
+'keep-alive',
+'Upgrade-Insecure-Requests',
+'1',
+'User-Agent',
+'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+'Accept',
+'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+'Sec-Fetch-Site',
+'none',
+'Sec-Fetch-Mode',
+'navigate',
+'Sec-Fetch-User',
+'?1',
+'Sec-Fetch-Dest',
+'document',
+'sec-ch-ua',
+'"Chromium";v="122", "Not(A:Brand";v="24", "Google Chrome";v="122"',
+'sec-ch-ua-mobile',
+'?0',
+'sec-ch-ua-platform',
+'"macOS"',
+'Accept-Encoding',
+'gzip, deflate, br, zstd',
+'Accept-Language',
+'ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7',
+'Cookie',
+'authorization=Bearer%20eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRW1haWwiOnsiaWQiOjE1fSwiaWF0IjoxNzEwMTQ5NzIxLCJleHAiOjE3MTAxOTI5MjF9.YGHSd77lHhEqabTwS7ttKO-jiPgWy6A-Zi1At8LbEnY; refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRW1haWwiOnsiaWQiOjE1fSwiaWF0IjoxNzEwMTQ5NzIxLCJleHAiOjE3MTA3NTQ1MjF9.JVHMQbGg5XQ6gbuM3kA1-Ft8cCm99LgPADVuq845MSo'
+],
+rawTrailers: [],
+joinDuplicateHeaders: null,
+aborted: false,
+upgrade: false,
+url: '/oauth/callback?code=L1-\_CaDoSZQb6fBlpXbotYpetWqEAI22LAtNuUS4AgT64Ii_gfizHvim8nkKPXVcAAABji3aPdtb9Pmr5eg_ZA',
+method: 'GET',
+statusCode: null,
+statusMessage: null,
+client: <ref *1> Socket {
+connecting: false,
+\_hadError: false,
+\_parent: null,
+\_host: null,
+\_closeAfterHandlingError: false,
+\_events: {
+close: [Array],
+error: [Function: socketOnError],
+prefinish: undefined,
+finish: undefined,
+drain: [Function: bound socketOnDrain],
+data: [Function: bound socketOnData],
+end: [Array],
+readable: undefined,
+timeout: [Function: socketOnTimeout],
+resume: [Function: onSocketResume],
+pause: [Function: onSocketPause]
+},
+\_readableState: ReadableState {
+highWaterMark: 16384,
+buffer: [],
+bufferIndex: 0,
+length: 0,
+pipes: [],
+awaitDrainWriters: null,
+[Symbol(kState)]: 193997060
+},
+\_writableState: WritableState {
+highWaterMark: 16384,
+length: 0,
+corked: 0,
+onwrite: [Function: bound onwrite],
+writelen: 0,
+bufferedIndex: 0,
+pendingcb: 0,
+[Symbol(kState)]: 17563908,
+[Symbol(kBufferedValue)]: null,
+[Symbol(kWriteCbValue)]: [Function: bound onFinish],
+[Symbol(kAfterWriteTickInfoValue)]: null
+},
+allowHalfOpen: true,
+\_maxListeners: undefined,
+\_eventsCount: 8,
+\_sockname: null,
+\_pendingData: null,
+\_pendingEncoding: '',
+server: Server {
+maxHeaderSize: undefined,
+insecureHTTPParser: undefined,
+requestTimeout: 300000,
+headersTimeout: 60000,
+keepAliveTimeout: 5000,
+connectionsCheckingInterval: 30000,
+requireHostHeader: true,
+joinDuplicateHeaders: undefined,
+rejectNonStandardBodyWrites: false,
+\_events: [Object: null prototype],
+\_eventsCount: 3,
+\_maxListeners: undefined,
+\_connections: 2,
+\_handle: [TCP],
+\_usingWorkers: false,
+\_workers: [],
+\_unref: false,
+allowHalfOpen: true,
+pauseOnConnect: false,
+noDelay: true,
+keepAlive: false,
+keepAliveInitialDelay: 0,
+highWaterMark: 16384,
+httpAllowHalfOpen: false,
+timeout: 0,
+maxHeadersCount: null,
+maxRequestsPerSocket: 0,
+\_connectionKey: '6::::3095',
+[Symbol(IncomingMessage)]: [Function: IncomingMessage],
+[Symbol(ServerResponse)]: [Function: ServerResponse],
+[Symbol(shapeMode)]: false,
+[Symbol(kCapture)]: false,
+[Symbol(async_id_symbol)]: 23,
+[Symbol(kUniqueHeaders)]: null,
+[Symbol(http.server.connections)]: ConnectionsList {},
+[Symbol(http.server.connectionsCheckingInterval)]: Timeout {
+\_idleTimeout: 30000,
+\_idlePrev: [TimersList],
+\_idleNext: [TimersList],
+\_idleStart: 1426,
+\_onTimeout: [Function: bound checkConnections],
+\_timerArgs: undefined,
+\_repeat: 30000,
+\_destroyed: false,
+[Symbol(refed)]: false,
+[Symbol(kHasPrimitive)]: false,
+[Symbol(asyncId)]: 25,
+[Symbol(triggerId)]: 24
+}
+},
+\_server: Server {
+maxHeaderSize: undefined,
+insecureHTTPParser: undefined,
+requestTimeout: 300000,
+headersTimeout: 60000,
+keepAliveTimeout: 5000,
+connectionsCheckingInterval: 30000,
+requireHostHeader: true,
+joinDuplicateHeaders: undefined,
+rejectNonStandardBodyWrites: false,
+\_events: [Object: null prototype],
+\_eventsCount: 3,
+\_maxListeners: undefined,
+\_connections: 2,
+\_handle: [TCP],
+\_usingWorkers: false,
+\_workers: [],
+\_unref: false,
+allowHalfOpen: true,
+pauseOnConnect: false,
+noDelay: true,
+keepAlive: false,
+keepAliveInitialDelay: 0,
+highWaterMark: 16384,
+httpAllowHalfOpen: false,
+timeout: 0,
+maxHeadersCount: null,
+maxRequestsPerSocket: 0,
+\_connectionKey: '6::::3095',
+[Symbol(IncomingMessage)]: [Function: IncomingMessage],
+[Symbol(ServerResponse)]: [Function: ServerResponse],
+[Symbol(shapeMode)]: false,
+[Symbol(kCapture)]: false,
+[Symbol(async_id_symbol)]: 23,
+[Symbol(kUniqueHeaders)]: null,
+[Symbol(http.server.connections)]: ConnectionsList {},
+[Symbol(http.server.connectionsCheckingInterval)]: Timeout {
+\_idleTimeout: 30000,
+\_idlePrev: [TimersList],
+\_idleNext: [TimersList],
+\_idleStart: 1426,
+\_onTimeout: [Function: bound checkConnections],
+\_timerArgs: undefined,
+\_repeat: 30000,
+\_destroyed: false,
+[Symbol(refed)]: false,
+[Symbol(kHasPrimitive)]: false,
+[Symbol(asyncId)]: 25,
+[Symbol(triggerId)]: 24
+}
+},
+parser: HTTPParser {
+'0': null,
+'1': [Function: parserOnHeaders],
+'2': [Function: parserOnHeadersComplete],
+'3': [Function: parserOnBody],
+'4': [Function: parserOnMessageComplete],
+'5': [Function: bound onParserExecute],
+'6': [Function: bound onParserTimeout],
+\_headers: [],
+\_url: '',
+socket: [Circular *1],
+incoming: [Circular *2],
+outgoing: null,
+maxHeaderPairs: 2000,
+\_consumed: true,
+onIncoming: [Function: bound parserOnIncoming],
+joinDuplicateHeaders: null,
+[Symbol(resource_symbol)]: [HTTPServerAsyncResource]
+},
+on: [Function: socketListenerWrap],
+addListener: [Function: socketListenerWrap],
+prependListener: [Function: socketListenerWrap],
+setEncoding: [Function: socketSetEncoding],
+\_paused: false,
+\_httpMessage: ServerResponse {
+\_events: [Object: null prototype],
+\_eventsCount: 1,
+\_maxListeners: undefined,
+outputData: [],
+outputSize: 0,
+writable: true,
+destroyed: false,
+\_last: false,
+chunkedEncoding: false,
+shouldKeepAlive: true,
+maxRequestsOnConnectionReached: false,
+\_defaultKeepAlive: true,
+useChunkedEncodingByDefault: true,
+sendDate: true,
+\_removedConnection: false,
+\_removedContLen: false,
+\_removedTE: false,
+strictContentLength: false,
+\_contentLength: null,
+\_hasBody: true,
+\_trailer: '',
+finished: false,
+\_headerSent: false,
+\_closed: false,
+socket: [Circular *1],
+\_header: null,
+\_keepAliveTimeout: 5000,
+\_onPendingData: [Function: bound updateOutgoingData],
+req: [Circular *2],
+\_sent100: false,
+\_expect_continue: false,
+\_maxRequestsPerSocket: 0,
+locals: [Object: null prototype] {},
+writeHead: [Function: writeHead],
+end: [Function: end],
+statusCode: 200,
+[Symbol(shapeMode)]: false,
+[Symbol(kCapture)]: false,
+[Symbol(kBytesWritten)]: 0,
+[Symbol(kNeedDrain)]: false,
+[Symbol(corked)]: 0,
+[Symbol(kOutHeaders)]: [Object: null prototype],
+[Symbol(errored)]: null,
+[Symbol(kHighWaterMark)]: 16384,
+[Symbol(kRejectNonStandardBodyWrites)]: false,
+[Symbol(kUniqueHeaders)]: null
+},
+timeout: 0,
+[Symbol(async_id_symbol)]: 27,
+[Symbol(kHandle)]: TCP {
+reading: true,
+onconnection: null,
+\_consumed: true,
+[Symbol(owner_symbol)]: [Circular *1]
+},
+[Symbol(lastWriteQueueSize)]: 0,
+[Symbol(timeout)]: Timeout {
+\_idleTimeout: -1,
+\_idlePrev: null,
+\_idleNext: null,
+\_idleStart: 3678,
+\_onTimeout: null,
+\_timerArgs: undefined,
+\_repeat: null,
+\_destroyed: true,
+[Symbol(refed)]: false,
+[Symbol(kHasPrimitive)]: false,
+[Symbol(asyncId)]: 51,
+[Symbol(triggerId)]: 48
+},
+[Symbol(kBuffer)]: null,
+[Symbol(kBufferCb)]: null,
+[Symbol(kBufferGen)]: null,
+[Symbol(shapeMode)]: true,
+[Symbol(kCapture)]: false,
+[Symbol(kSetNoDelay)]: true,
+[Symbol(kSetKeepAlive)]: false,
+[Symbol(kSetKeepAliveInitialDelay)]: 0,
+[Symbol(kBytesRead)]: 0,
+[Symbol(kBytesWritten)]: 0
+},
+\_consuming: false,
+\_dumped: false,
+next: [Function: next],
+baseUrl: '',
+originalUrl: '/oauth/callback?code=L1-\_CaDoSZQb6fBlpXbotYpetWqEAI22LAtNuUS4AgT64Ii_gfizHvim8nkKPXVcAAABji3aPdtb9Pmr5eg_ZA',
+\_parsedUrl: Url {
+protocol: null,
+slashes: null,
+auth: null,
+host: null,
+port: null,
+hostname: null,
+hash: null,
+search: '?code=L1-\_CaDoSZQb6fBlpXbotYpetWqEAI22LAtNuUS4AgT64Ii_gfizHvim8nkKPXVcAAABji3aPdtb9Pmr5eg_ZA',
+query: 'code=L1-\_CaDoSZQb6fBlpXbotYpetWqEAI22LAtNuUS4AgT64Ii_gfizHvim8nkKPXVcAAABji3aPdtb9Pmr5eg_ZA',
+pathname: '/oauth/callback',
+path: '/oauth/callback?code=L1-\_CaDoSZQb6fBlpXbotYpetWqEAI22LAtNuUS4AgT64Ii_gfizHvim8nkKPXVcAAABji3aPdtb9Pmr5eg_ZA',
+href: '/oauth/callback?code=L1-\_CaDoSZQb6fBlpXbotYpetWqEAI22LAtNuUS4AgT64Ii_gfizHvim8nkKPXVcAAABji3aPdtb9Pmr5eg_ZA',
+\_raw: '/oauth/callback?code=L1-\_CaDoSZQb6fBlpXbotYpetWqEAI22LAtNuUS4AgT64Ii_gfizHvim8nkKPXVcAAABji3aPdtb9Pmr5eg_ZA'
+},
+params: {},
+query: {
+code: 'L1-\_CaDoSZQb6fBlpXbotYpetWqEAI22LAtNuUS4AgT64Ii_gfizHvim8nkKPXVcAAABji3aPdtb9Pmr5eg_ZA'
+},
+res: <ref *3> ServerResponse {
+\_events: [Object: null prototype] { finish: [Function: bound resOnFinish] },
+\_eventsCount: 1,
+\_maxListeners: undefined,
+outputData: [],
+outputSize: 0,
+writable: true,
+destroyed: false,
+\_last: false,
+chunkedEncoding: false,
+shouldKeepAlive: true,
+maxRequestsOnConnectionReached: false,
+\_defaultKeepAlive: true,
+useChunkedEncodingByDefault: true,
+sendDate: true,
+\_removedConnection: false,
+\_removedContLen: false,
+\_removedTE: false,
+strictContentLength: false,
+\_contentLength: null,
+\_hasBody: true,
+\_trailer: '',
+finished: false,
+\_headerSent: false,
+\_closed: false,
+socket: <ref *1> Socket {
+connecting: false,
+\_hadError: false,
+\_parent: null,
+\_host: null,
+\_closeAfterHandlingError: false,
+\_events: [Object],
+\_readableState: [ReadableState],
+\_writableState: [WritableState],
+allowHalfOpen: true,
+\_maxListeners: undefined,
+\_eventsCount: 8,
+\_sockname: null,
+\_pendingData: null,
+\_pendingEncoding: '',
+server: [Server],
+\_server: [Server],
+parser: [HTTPParser],
+on: [Function: socketListenerWrap],
+addListener: [Function: socketListenerWrap],
+prependListener: [Function: socketListenerWrap],
+setEncoding: [Function: socketSetEncoding],
+\_paused: false,
+\_httpMessage: [Circular *3],
+timeout: 0,
+[Symbol(async_id_symbol)]: 27,
+[Symbol(kHandle)]: [TCP],
+[Symbol(lastWriteQueueSize)]: 0,
+[Symbol(timeout)]: Timeout {
+\_idleTimeout: -1,
+\_idlePrev: null,
+\_idleNext: null,
+\_idleStart: 3678,
+\_onTimeout: null,
+\_timerArgs: undefined,
+\_repeat: null,
+\_destroyed: true,
+[Symbol(refed)]: false,
+[Symbol(kHasPrimitive)]: false,
+[Symbol(asyncId)]: 51,
+[Symbol(triggerId)]: 48
+},
+[Symbol(kBuffer)]: null,
+[Symbol(kBufferCb)]: null,
+[Symbol(kBufferGen)]: null,
+[Symbol(shapeMode)]: true,
+[Symbol(kCapture)]: false,
+[Symbol(kSetNoDelay)]: true,
+[Symbol(kSetKeepAlive)]: false,
+[Symbol(kSetKeepAliveInitialDelay)]: 0,
+[Symbol(kBytesRead)]: 0,
+[Symbol(kBytesWritten)]: 0
+},
+\_header: null,
+\_keepAliveTimeout: 5000,
+\_onPendingData: [Function: bound updateOutgoingData],
+req: [Circular *2],
+\_sent100: false,
+\_expect_continue: false,
+\_maxRequestsPerSocket: 0,
+locals: [Object: null prototype] {},
+writeHead: [Function: writeHead],
+end: [Function: end],
+statusCode: 200,
+[Symbol(shapeMode)]: false,
+[Symbol(kCapture)]: false,
+[Symbol(kBytesWritten)]: 0,
+[Symbol(kNeedDrain)]: false,
+[Symbol(corked)]: 0,
+[Symbol(kOutHeaders)]: [Object: null prototype] { 'x-powered-by': [Array] },
+[Symbol(errored)]: null,
+[Symbol(kHighWaterMark)]: 16384,
+[Symbol(kRejectNonStandardBodyWrites)]: false,
+[Symbol(kUniqueHeaders)]: null
+},
+secret: undefined,
+cookies: {
+authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRW1haWwiOnsiaWQiOjE1fSwiaWF0IjoxNzEwMTQ5NzIxLCJleHAiOjE3MTAxOTI5MjF9.YGHSd77lHhEqabTwS7ttKO-jiPgWy6A-Zi1At8LbEnY',
+refreshToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRW1haWwiOnsiaWQiOjE1fSwiaWF0IjoxNzEwMTQ5NzIxLCJleHAiOjE3MTA3NTQ1MjF9.JVHMQbGg5XQ6gbuM3kA1-Ft8cCm99LgPADVuq845MSo'
+},
+signedCookies: [Object: null prototype] {},
+\_parsedOriginalUrl: Url {
+protocol: null,
+slashes: null,
+auth: null,
+host: null,
+port: null,
+hostname: null,
+hash: null,
+search: '?code=L1-\_CaDoSZQb6fBlpXbotYpetWqEAI22LAtNuUS4AgT64Ii_gfizHvim8nkKPXVcAAABji3aPdtb9Pmr5eg_ZA',
+query: 'code=L1-\_CaDoSZQb6fBlpXbotYpetWqEAI22LAtNuUS4AgT64Ii_gfizHvim8nkKPXVcAAABji3aPdtb9Pmr5eg_ZA',
+pathname: '/oauth/callback',
+path: '/oauth/callback?code=L1-\_CaDoSZQb6fBlpXbotYpetWqEAI22LAtNuUS4AgT64Ii_gfizHvim8nkKPXVcAAABji3aPdtb9Pmr5eg_ZA',
+href: '/oauth/callback?code=L1-\_CaDoSZQb6fBlpXbotYpetWqEAI22LAtNuUS4AgT64Ii_gfizHvim8nkKPXVcAAABji3aPdtb9Pmr5eg_ZA',
+\_raw: '/oauth/callback?code=L1-\_CaDoSZQb6fBlpXbotYpetWqEAI22LAtNuUS4AgT64Ii_gfizHvim8nkKPXVcAAABji3aPdtb9Pmr5eg_ZA'
+},
+sessionStore: MemoryStore {
+\_events: [Object: null prototype] {
+disconnect: [Function: ondisconnect],
+connect: [Function: onconnect]
+},
+\_eventsCount: 2,
+\_maxListeners: undefined,
+sessions: [Object: null prototype] {},
+generate: [Function (anonymous)],
+[Symbol(shapeMode)]: false,
+[Symbol(kCapture)]: false
+},
+sessionID: 'BhmWYgI0kyCCiIfJ8ONWHrqXvqXdgnyH',
+session: Session {
+cookie: { path: '/', \_expires: null, originalMaxAge: null, httpOnly: true }
+},
+logIn: [Function (anonymous)],
+login: [Function (anonymous)],
+logOut: [Function (anonymous)],
+logout: [Function (anonymous)],
+isAuthenticated: [Function (anonymous)],
+isUnauthenticated: [Function (anonymous)],
+\_sessionManager: SessionManager {
+\_key: 'passport',
+\_serializeUser: [Function: bound ]
+},
+\_passport: {
+instance: Authenticator {
+\_key: 'passport',
+\_strategies: [Object],
+\_serializers: [],
+\_deserializers: [],
+\_infoTransformers: [],
+\_framework: [Object],
+\_sm: [SessionManager],
+Authenticator: [Function: Authenticator],
+Passport: [Function: Authenticator],
+Strategy: [Function],
+strategies: [Object],
+\_userProperty: 'user'
+}
+},
+body: {},
+route: Route {
+path: '/oauth/callback',
+stack: [ [Layer] ],
+methods: { get: true }
+},
+authInfo: undefined,
+user: {
+accessToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRW1haWwiOnsiaWQiOjE1fSwiaWF0IjoxNzEwMTY2MjYyLCJleHAiOjE3MTAyMDk0NjJ9.Uc2WpOoEH4Y_2czvBxd673ZG13_ch4apL5ZhPCmZ2g4',
+refreshToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRW1haWwiOnsiaWQiOjE1fSwiaWF0IjoxNzEwMTY2MjYyLCJleHAiOjE3MTA3NzEwNjJ9.PU5K_IPe1CpxkWpkG6sXa_d7Tz19FuvwWV9bxb9ay84'
+},
+[Symbol(shapeMode)]: true,
+[Symbol(kCapture)]: false,
+[Symbol(kHeaders)]: {
+host: 'localhost:3095',
+connection: 'keep-alive',
+'upgrade-insecure-requests': '1',
+'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,_/_;q=0.8,application/signed-exchange;v=b3;q=0.7',
+'sec-fetch-site': 'none',
+'sec-fetch-mode': 'navigate',
+'sec-fetch-user': '?1',
+'sec-fetch-dest': 'document',
+'sec-ch-ua': '"Chromium";v="122", "Not(A:Brand";v="24", "Google Chrome";v="122"',
+'sec-ch-ua-mobile': '?0',
+'sec-ch-ua-platform': '"macOS"',
+'accept-encoding': 'gzip, deflate, br, zstd',
+'accept-language': 'ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7',
+cookie: 'authorization=Bearer%20eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRW1haWwiOnsiaWQiOjE1fSwiaWF0IjoxNzEwMTQ5NzIxLCJleHAiOjE3MTAxOTI5MjF9.YGHSd77lHhEqabTwS7ttKO-jiPgWy6A-Zi1At8LbEnY; refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRW1haWwiOnsiaWQiOjE1fSwiaWF0IjoxNzEwMTQ5NzIxLCJleHAiOjE3MTA3NTQ1MjF9.JVHMQbGg5XQ6gbuM3kA1-Ft8cCm99LgPADVuq845MSo'
+},
+[Symbol(kHeadersCount)]: 30,
+[Symbol(kTrailers)]: null,
+[Symbol(kTrailersCount)]: 0
+}
