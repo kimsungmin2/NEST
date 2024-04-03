@@ -1,5 +1,5 @@
 import { UserInfo } from '../utils/decorator/userInfo.decorator';
-import { Body, Controller, Get, Post, Patch, Req, Res, UseGuards, Param, HttpCode } from '@nestjs/common';
+import { Body, Controller, Get, Post, Patch, Req, Res, UseGuards, Param, HttpCode, Render } from '@nestjs/common';
 import { LoginDto } from './dto/login.dto';
 import { User } from './entities/user.entity';
 import { UserService } from './user.service';
@@ -57,6 +57,7 @@ export class UserController {
 
   @ApiOperation({ summary: '로그인' })
   @Post('login')
+  @Render('sign-in')
   async login(@Body() loginDto: LoginDto, @Res() res) {
     const user = await this.userService.login(loginDto.email, loginDto.password);
 
@@ -68,11 +69,12 @@ export class UserController {
   @ApiOperation({ summary: '유저 정보' })
   @UseGuards(JwtAuthGuard)
   @Get('')
+  @Render('users')
   getUser(@UserInfo() user: User) {
     return { 이름: user.name, 자기소개: user.Introduce };
   }
 
-  @ApiOperation({ summary: '로그아웃' })
+  @ApiOperation({ summary: '로그아웃', description: '로그아웃' })
   @Post('logout')
   logOut(@Res() res) {
     //   req.logOut();

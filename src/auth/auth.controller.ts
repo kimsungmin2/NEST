@@ -4,7 +4,7 @@ import { KakaoAuthGuard } from 'src/utils/guard/kakao.guard';
 import { NaverAuthGuard } from 'src/utils/guard/naver.guard';
 import { ApiTags } from '@nestjs/swagger';
 
-@ApiTags('z')
+@ApiTags('간편 회원가입 직접 주소를 타이핑해주세요')
 @Controller('oauth')
 export class AuthController {
   constructor(private readonly authService: AuthService) {}

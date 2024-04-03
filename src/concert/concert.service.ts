@@ -85,6 +85,7 @@ export class ConcertService {
       await queryRunner.release();
     }
   }
+
   async searchConcert(search: string) {
     console.log(search);
     const searchResult = await this.concertRepository.find({

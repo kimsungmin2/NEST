@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #mediaContainer {
+        display: flex;
+        justify-content: center; /* 컨테이너 내 요소들을 가운데 정렬 */
+        align-items: center; /* 컨테이너 내 요소들을 세로 중앙 정렬 */
+      }
+      #videoContainer,
+      #screenContainer {
+        width: 300px; /* 너비 설정 */
+        height: 500px; /* 높이 설정 */
+        margin: 0 10px; /* 좌우 마진 설정 */
+      }
+      video {
+        width: 100%; /* 비디오 너비를 부모 컨테이너에 맞춤 */
+        height: auto; /* 비디오 높이를 비율에 맞게 자동 조정 */
+      }
+      #message-container {
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin-bottom: 10px;
+        height: 300px;
+        overflow-y: auto;
+      }
+      #message-form {
+        display: flex;
+      }
+      #message-input {
+        flex-grow: 1;
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button id="screenShareBtn" onclick="shareScreen()">화면 공유</button>
+    <button id="audioShareBtn" onclick="shareAudio()">오디오 공유</button>
+    <button id="videoShareBtn" onclick="shareVideo()">비디오 공유</button>
+    <button id="mediaControl" onclick="mediaControl()">Stop Media</button>
+    <div id="mediaContainer" style="display: flex; width: 100%; justify-content: center">
+      <div id="videoContainer" style="width: 300px; height: 300px; margin-right: 20px">
+        <video id="localVideo" autoplay></video>
+      </div>
+      <div id="screenContainer" style="width: 300px; height: 300px">
+        <video id="localScreen" autoplay></video>
+      </div>
+    </div>
+    <div id="message-container"></div>
+    <form id="message-form">
+      <input type="text" id="message-input" placeholder="Enter your message here" />
+      <button type="submit">Send</button>
+    </form>
+
+    <script src="http://localhost:3095/socket.io/socket.io.js"></script>
+    <script src="https://cdn.socket.io/4.4.1/socket.io.min.js"></script>
+    <script>
+      // 사용 변수 목록
+      let localVideo = document.getElementById('localVideo');
+      let localScreen = document.getElementById('localScreen');
+      let remoteVideo = document.getElementById('remoteVideo');
+      let mediaControlButton = document.getElementById('mediaControl');
+      let localStream;
+      let peerConnection;
+      let peerInfo = {};
+      let selectedCandidate = {};
+
+      const makePeerConnect = async (userId) => {
+        peerInfo[userId] = new Object();
+        peerInfo[userId].peerConnection = new RTCPeerConnection({
+          iceServers: [
+            {
+              urls: 'stun:stun.l.google.com:19302',
+            },
+          ],
+        });
+        peerInfo[userId].peerConnection.addEventListener('icecandidate', icecandidate);
+        peerInfo[userId].peerConnection.addEventListener('addstream', addStream);
+
+        for (let track of localStream.getTracks()) {
+          await peerInfo[userId].peerConnection.addTrack(track, localStream);
+        }
+      };
+
+      // socket
+      let socket = io('http://localhost:3095/chat');
+
+      socket.on('enter', async ({ userId }) => {
+        await makePeerConnect(userId);
+        const offer = await peerInfo[userId].peerConnection.createOffer();
+        await peerInfo[userId].peerConnection.setLocalDescription(offer);
+        socket.emit('offer', offer);
+      });
+
+      socket.on('offer', async ({ userId, offer }) => {
+        if (!peerInfo[userId]) {
+          await makePeerConnect(userId);
+          await peerInfo[userId].peerConnection.setRemoteDescription(offer);
+
+          const answer = await peerInfo[userId].peerConnection.createAnswer(offer);
+
+          await peerInfo[userId].peerConnection.setLocalDescription(answer);
+          socket.emit('answer', {
+            answer,
+            offer,
+            toUserId: userId,
+          });
+        }
+      });
+
+      socket.on('answer', async ({ userId, answer, responseOffer, toUserId }) => {
+        if (peerInfo[toUserId] === undefined) {
+          await peerInfo[userId].peerConnection.setRemoteDescription(answer);
+        }
+      });
+
+      socket.on('icecandidate', async ({ userId, candidate }) => {
+        if (selectedCandidate[candidate.candidate] === undefined) {
+          selectedCandidate[candidate.candidate] = true;
+          await peerInfo[userId].peerConnection.addIceCandidate(candidate);
+        }
+      });
+
+      socket.on('userDisconnect', ({ userId }) => {
+        delete peerInfo[userId];
+        //const disconnectUser = document.getElementById(userId);
+        //disconnectUser.remove();
+      });
+
+      const useMedia = async () => {
+        await shareScreen();
+        await shareAudio();
+        await shareVideo();
+      };
+
+      const share = async () => {
+        socket.emit('join', '1234');
+      };
+
+      // 화면 공유 함수
+      // 오디오 공유 함수
+      const shareAudio = async () => {
+        try {
+          const audioStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+          if (!localStream) {
+            localStream = new MediaStream();
+          }
+          audioStream.getAudioTracks().forEach((track) => localStream.addTrack(track));
+          localVideo.srcObject = localStream;
+        } catch (error) {
+          console.error('오디오 공유 중 오류 발생:', error);
+        }
+      };
+
+      // 비디오 공유 함수
+      const shareVideo = async () => {
+        try {
+          const videoStream = await navigator.mediaDevices.getUserMedia({ video: true });
+          localStream = videoStream;
+          localVideo.srcObject = videoStream;
+        } catch (error) {
+          console.error('비디오 공유 중 오류 발생:', error);
+        }
+      };
+
+      // 화면 공유 함수
+      const shareScreen = async () => {
+        try {
+          const screenStream = await navigator.mediaDevices.getDisplayMedia({ video: true, audio: true });
+          localScreenStream = screenStream;
+          localScreen.srcObject = screenStream;
+        } catch (error) {
+          console.error('화면 공유 중 오류 발생:', error);
+        }
+      };
+
+      // 내 비디오 & 오디오를 로컬에서 중지합니다.
+
+      const mediaControl = () => {
+        socket.emit('userDisconnect');
+
+        // 오디오 중지
+        localStream.getAudioTracks().forEach((track) => {
+          track.enabled = !track.enabled;
+        });
+
+        // 비디오 중지
+        localStream.getVideoTracks().forEach((track) => {
+          track.enabled = !track.enabled;
+        });
+      };
+
+      // 연결 후보 교환
+      const icecandidate = (data) => {
+        if (data.candidate) {
+          socket.emit('icecandidate', data.candidate);
+        }
+      };
+
+      // 상대 영상 & 비디오 추가
+      const addStream = (data) => {
+        let videoArea = document.createElement('video');
+        videoArea.autoplay = true;
+        videoArea.srcObject = data.stream;
+
+        let container = document.getElementById('container');
+        container.appendChild(videoArea);
+      };
+      useMedia();
+      document.addEventListener('DOMContentLoaded', function () {
+        const socket = io('http://localhost:3095/chat');
+        const messageContainer = document.getElementById('message-container');
+        const messageForm = document.getElementById('message-form');
+        const messageInput = document.getElementById('message-input');
+
+        // 서버로부터 메시지 수신
+        socket.on('message', function (data) {
+          console.log('Received message:', data);
+          displayMessage(data.message);
+        });
+
+        // 서버로부터 'enter' 이벤트 수신
+        socket.on('enter', function (data) {
+          console.log('Another user entered:', data);
+        });
+
+        // 서버로부터 'icecandidate' 이벤트 수신
+        socket.on('icecandidate', function (data) {
+          console.log('Received icecandidate:', data);
+        });
+
+        // 서버로부터 'offer' 이벤트 수신
+        socket.on('offer', function (data) {
+          console.log('Received offer:', data);
+        });
+
+        // 서버로부터 'answer' 이벤트 수신
+        socket.on('answer', function (data) {
+          console.log('Received answer:', data);
+        });
+
+        messageForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          const message = messageInput.value;
+          const roomId = '1234'; // 현재 방의 ID를 설정하세요.
+          sendMessage(roomId, message);
+          messageInput.value = '';
+        });
+
+        function sendMessage(roomId, message) {
+          socket.emit('message', { roomId, message });
+        }
+
+        function displayMessage(message) {
+          const messageElement = document.createElement('div');
+          messageElement.textContent = message;
+          messageContainer.appendChild(messageElement);
+        }
+
+        function joinRoom(roomId) {
+          socket.emit('join', roomId);
+        }
+      });
+    </script>
+  </body>
+</html>

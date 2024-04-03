@@ -161,6 +161,14 @@ export class UserService {
       .select('SUM(point.possession)', 'sum')
       .where('point.userId = :id', { id: userId })
       .getRawOne();
+
+    const count = await this.dataSource
+      .getRepository(Point)
+      .createQueryBuilder('point')
+      .where('point.possession = :possession', { possession: 1000000 })
+      .andWhere('point.userId = :id', { id: userId })
+      .getCount();
+    console.log('gg', count);
     return sum;
   }
 }

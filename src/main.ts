@@ -7,11 +7,13 @@ import passport from 'passport';
 import cookieParser from 'cookie-parser';
 import session from 'express-session';
 import { HttpExceptionFilter } from './utils/fillter/http-exception.filter';
+import { NestExpressApplication } from '@nestjs/platform-express';
+import { join } from 'path';
 
 declare const module: any;
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create<NestExpressApplication>(AppModule);
   app.useGlobalPipes(new ValidationPipe());
   app.useGlobalFilters(new HttpExceptionFilter());
 
@@ -21,7 +23,9 @@ async function bootstrap() {
     .setVersion('1.0')
     .addCookieAuth('connect.sid')
     .build();
+
   const document = SwaggerModule.createDocument(app, config);
+
   SwaggerModule.setup('api', app, document);
   app.use(cookieParser());
   app.use(
@@ -37,7 +41,11 @@ async function bootstrap() {
   app.use(passport.initialize());
   app.use(passport.session());
 
-  const port = process.env.PORT || 3095;
+  app.useStaticAssets(join(__dirname, '../..', 'public'));
+  app.setBaseViewsDir(join(__dirname, '../..', 'views'));
+  app.setViewEngine('ejs');
+
+  const port = process.env.PORT || 3000;
   await app.listen(port);
   console.log(`listening on port ${port}`);
 

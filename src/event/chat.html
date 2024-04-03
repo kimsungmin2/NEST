@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>WebSocket Client Example</title>
+    <script src="https://cdn.socket.io/4.4.1/socket.io.min.js"></script>
+    <style>
+      #message-container {
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin-bottom: 10px;
+        height: 300px;
+        overflow-y: auto;
+      }
+      #message-form {
+        display: flex;
+      }
+      #message-input {
+        flex-grow: 1;
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>WebSocket Client Example</h1>
+
+    <div id="message-container"></div>
+    <form id="message-form">
+      <input type="text" id="message-input" placeholder="Enter your message here" />
+      <button type="submit">Send</button>
+    </form>
+
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function () {
+        const socket = io('http://localhost:3095/chat');
+        const messageContainer = document.getElementById('message-container');
+        const messageForm = document.getElementById('message-form');
+        const messageInput = document.getElementById('message-input');
+
+        // 서버로부터 메시지 수신
+        socket.on('message', function (data) {
+          console.log('Received message:', data);
+          displayMessage(data.message);
+        });
+
+        // 서버로부터 'enter' 이벤트 수신
+        socket.on('enter', function (data) {
+          console.log('Another user entered:', data);
+        });
+
+        // 서버로부터 'icecandidate' 이벤트 수신
+        socket.on('icecandidate', function (data) {
+          console.log('Received icecandidate:', data);
+        });
+
+        // 서버로부터 'offer' 이벤트 수신
+        socket.on('offer', function (data) {
+          console.log('Received offer:', data);
+        });
+
+        // 서버로부터 'answer' 이벤트 수신
+        socket.on('answer', function (data) {
+          console.log('Received answer:', data);
+        });
+
+        messageForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          const message = messageInput.value;
+          const roomId = '1234'; // 현재 방의 ID를 설정하세요.
+          sendMessage(roomId, message);
+          messageInput.value = '';
+        });
+
+        function sendMessage(roomId, message) {
+          socket.emit('message', { roomId, message });
+        }
+
+        function displayMessage(message) {
+          const messageElement = document.createElement('div');
+          messageElement.textContent = message;
+          messageContainer.appendChild(messageElement);
+        }
+
+        function joinRoom(roomId) {
+          socket.emit('join', roomId);
+        }
+      });
+    </script>
+  </body>
+</html>
